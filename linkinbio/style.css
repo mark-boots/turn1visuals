@@ -52,11 +52,11 @@ body::after{
   width: fit-content;
   display: grid;
   grid-template-columns: max-content 1fr;
-  gap: 2em;
+  gap: 1em;
   text-align: left;
 }
 .social-item{
-  padding: 1em;
+  padding: 0.5em 1em ;
   gap: 0 1em;
   border-radius: 1em 0 0 0;
   border: 4px solid red;
@@ -79,12 +79,14 @@ body::after{
   grid-row-end: span 2;
   place-self: center;
   display: grid;
+  height: 100%;
+  place-items: center;
   
 }
-.social-icon img { width: 100%; height: 100%; object-fit: fit}
+.social-icon img { width: 80%; height: 80%; object-fit: contain}
 
 .social-name {
-  font-size: 1.5em;
+  font-size: 1.25em;
 }
 .social-link {
   font-size: 0.75em
