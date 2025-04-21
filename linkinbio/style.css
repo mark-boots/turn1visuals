@@ -1,3 +1,9 @@
+@property --swooshfill {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: -180deg;
+}
+
 * { box-sizing: border-box;}
 html {
   color-scheme: dark;
@@ -59,20 +65,23 @@ body::after{
   padding: 0.5em 1em ;
   gap: 0 1em;
   border-radius: 1em 0 0 0;
-  border: 4px solid red;
+  border: 4px solid transparent;
   border-width: 4px 0 0 4px;
   display: grid;
   grid-column: 1/-1;
   grid-template-columns: subgrid;
   text-decoration: none;
   color: white;
-  background: linear-gradient(transparent 50%, red 0);
-  background-size: 100% 200%;
-  transition: background-position 0.25s ease-in-out;
+  
+  transition: --swooshfill 0.5s ease;
+  background: 
+    linear-gradient(black 0 0) padding-box,
+    conic-gradient(from var(--swooshfill) at bottom right, white 90deg, red 0) border-box;
 }
 .social-item:hover, 
 .social-icon:focus{
-  background-position: 0 -100%;
+  --swooshfill: -90deg;
+  
 }
 
 .social-icon {
