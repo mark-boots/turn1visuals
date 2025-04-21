@@ -79,9 +79,19 @@ body::after{
     conic-gradient(from var(--swooshfill) at bottom right, white 90deg, red 0) border-box;
 }
 .social-item:hover, 
-.social-icon:focus{
+.social-item:focus{
   --swooshfill: -90deg;
-  
+  outline: none;
+
+  & .social-name { 
+    text-decoration: underline red;
+    text-underline-offset: 5px;
+  }
+}
+
+.social-item:focus-visible {
+  outline: 1px solid white;
+  outline-offset: 6px;
 }
 
 .social-icon {
