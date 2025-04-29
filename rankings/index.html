@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>T1V Rankings</title>
+  <script src="./script.js" defer></script>
+  <link rel="stylesheet" href="./style.css">
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@latest/dist/html2canvas.min.js"></script>
+</head>
+<body>
+ 
+  
+  <div class="capturecontainer">
+    <h1>
+      <img src="./images/logo.svg" alt=""> 
+      Ranking: <span class="rankingtitle"></span>
+      <select name="ranking" id="ranking"></select>
+    </h1>
+    <div class="rankingcontainer">
+      <div class="numbers"></div>
+      <div class="items"></div>
+    </div>
+    <div class="capturebtns">
+      <button class="capture-btn" data-capture-type="save">Save as Image</button>
+  <button class="capture-btn" data-capture-type="copy">Copy as Image</button>
+    </div>
+    <div class="link">turn1visuals.com/rankings</div>
+  </div>
+  
+</body>
+</html>

@@ -1,0 +1,113 @@
+* { box-sizing: border-box}
+
+body {
+  font-family: system-ui, sans-serif;
+  text-align: center;
+  background-color: black;
+  color: white;
+}
+
+select#ranking{
+  text-align: center;
+  font: inherit;
+}
+
+h1 {
+  
+  font-size: 1.5em;
+  img {
+    height: 1.5em;
+    vertical-align: top;
+  }
+}
+.capturecontainer{
+  background-color: black;
+  .link { display: none }
+  > h1 > span { display: none}
+  &[capture="true"]{
+    padding: 50px;
+    width: 1200px;
+    .capturebtns { display: none }
+    > h1 > span { display: inline }
+    > h1 > select { display: none }
+    .link { display: block}
+  }
+}
+.rankingtitle {
+  text-align: center;
+}
+.rankingcontainer{
+  --max-columns: 5;
+  --gap: 20px;
+  --padding: 20px;
+  --item-width: calc(1100px - (var(--max-columns) - 1) * var(--gap) -  2 * var(--padding)) / var(--max-columns);
+  --aspect-ratio: 4/3;
+  
+  max-width:calc( var(--max-columns) * var(--item-width) + (var(--max-columns) - 1) * var(--gap) + 2 * var(--padding));
+  margin-inline: auto;
+  padding: var(--padding);
+  
+  display: grid;;
+  
+  >.numbers, .items {
+    grid-area: 1/1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(var(--item-width), 100%), 1fr));
+    gap: var(--gap);
+    > * {
+      border: 1px solid white;
+      /* padding: 10px; */
+    }
+  }
+  .numbers {
+    
+    > div {
+      padding: 5px;
+      text-align: left;
+      font-size: 2em;
+      color: black;
+      font-weight: bold;
+      line-height: 1;
+      background-color: hsl(0 0 100 / 1);
+    }
+  }
+  .items {
+    > figure {
+      display: grid;
+      margin: 0;
+      grid-template-rows: 1fr auto 1fr;
+      align-items: center;
+      &::before {
+        content: "";
+      }
+      &:hover{
+        cursor: grab;
+      }
+      &:active{
+        cursor: grabbing
+      }
+      > div {
+        aspect-ratio: var(--aspect-ratio);
+        position: relative;
+        
+        > img {
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          max-width: 100%;
+          max-height: 100%;
+          display: block;
+          padding: 5px 5px 0 5px
+        }
+      }
+      
+      > figcaption {
+        text-align: center;
+        background: black;
+        color: white;
+      }
+    }
+    
+  }
+}
