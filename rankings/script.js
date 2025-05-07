@@ -82,8 +82,8 @@ const rankings = {
         imgUrl: "images/drivers/bortoleto.png", 
       },
       { 
-        name: "Doohan", 
-        imgUrl: "images/drivers/doohan.png", 
+        name: "Colapinto", 
+        imgUrl: "images/drivers/colapinto.png", 
       },
       { 
         name: "Gasly", 
